@@ -137,6 +137,17 @@ class BlockHitEvent(namedtuple('BlockHitEvent', ('pos', 'face', 'player'))):
 
     @classmethod
     def from_string(cls, connection, s):
+        # Final line of 
+        #
+        # }[int(f)], Player(connection, int(p)))
+        #
+        # became
+        # 
+        # }[int(f) % 6], Player(connection, int(p)))
+        #
+        # As it appears that more than 6 faces could be returned. Don't know why
+        # and this is a kludge to make the code not error
+        # DG 
         v, f, p = s.rsplit(',', 2)
         return cls(Vector.from_string(v), {
             0: 'y-',
@@ -145,7 +156,7 @@ class BlockHitEvent(namedtuple('BlockHitEvent', ('pos', 'face', 'player'))):
             3: 'z+',
             4: 'x-',
             5: 'x+',
-            }[int(f)], Player(connection, int(p)))
+            }[int(f) % 6], Player(connection, int(p)))
 
     @property
     def __dict__(self):
