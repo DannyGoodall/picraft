@@ -255,7 +255,7 @@ class Vector(namedtuple('Vector', ('x', 'y', 'z'))):
     def from_tuple(cls, t, type=int):
         x, y, z = t[0], t[1], t[2]
         return cls(type(x), type(y), type(z))
-        
+
     def __str__(self):
         return '%s,%s,%s' % (self.x, self.y, self.z)
 

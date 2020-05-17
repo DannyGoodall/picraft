@@ -289,7 +289,11 @@ class Block(namedtuple('Block', ('id', 'data'))):
 
     @classmethod
     def from_string(cls, s):
-        id_, data = s.split(',', 1)
+        try:
+            id_, data = s.split(',', 1)
+        except AttributeError:
+            print(f"Block.from_string failed. Was passed None. Air block returned.")
+            id_, data = 0, 0
         return cls.from_id(int(id_), int(data))
 
     @classmethod
