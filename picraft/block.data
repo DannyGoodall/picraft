@@ -374,6 +374,7 @@
    251  13    0   1       concrete                        Green Concrete
    251  14    0   1       concrete                        Red Concrete
    251  15    0   1       concrete                        Black Concrete
+   251  0     0   1       concrete_powder                 White Concrete Powder
    252  1     0   1       concrete_powder                 Orange Concrete Powder
    252  2     0   1       concrete_powder                 Magenta Concrete Powder
    252  3     0   1       concrete_powder                 Light Concrete Clay Powder
