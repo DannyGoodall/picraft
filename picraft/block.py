@@ -650,3 +650,5 @@ FENCE_GATE          = Block(107)
 GLOWING_OBSIDIAN    = Block(246)
 NETHER_REACTOR_CORE = Block(247)
 
+CONCRETE            = Block(251)
+CONCRETE_POWDER     = Block(252)

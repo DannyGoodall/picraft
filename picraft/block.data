@@ -358,6 +358,36 @@
    197  0     0   0       dark_oak_door                   Dark Oak Door Block
    246  0     1   1       glowing_obsidian                Glowing Obsidian
    247  0     1   1       nether_reactor_core             Nether Reactor Core
+   251  0     0   1       concrete                        White Concrete
+   251  1     0   1       concrete                        Orange Concrete
+   251  2     0   1       concrete                        Magenta Concrete
+   251  3     0   1       concrete                        Light Concrete Clay
+   251  4     0   1       concrete                        Yellow Concrete
+   251  5     0   1       concrete                        Lime Concrete
+   251  6     0   1       concrete                        Pink Concrete
+   251  7     0   1       concrete                        Gray Concrete
+   251  8     0   1       concrete                        Light Concrete Clay
+   251  9     0   1       concrete                        Cyan Concrete
+   251  10    0   1       concrete                        Purple Concrete
+   251  11    0   1       concrete                        Blue Concrete
+   251  12    0   1       concrete                        Brown Concrete
+   251  13    0   1       concrete                        Green Concrete
+   251  14    0   1       concrete                        Red Concrete
+   251  15    0   1       concrete                        Black Concrete
+   252  1     0   1       concrete_powder                 Orange Concrete Powder
+   252  2     0   1       concrete_powder                 Magenta Concrete Powder
+   252  3     0   1       concrete_powder                 Light Concrete Clay Powder
+   252  4     0   1       concrete_powder                 Yellow Concrete Powder
+   252  5     0   1       concrete_powder                 Lime Concrete Powder
+   252  6     0   1       concrete_powder                 Pink Concrete Powder
+   252  7     0   1       concrete_powder                 Gray Concrete Powder
+   252  8     0   1       concrete_powder                 Light Concrete Clay Powder
+   252  9     0   1       concrete_powder                 Cyan Concrete Powder
+   252  10    0   1       concrete_powder                 Purple Concrete Powder
+   252  11    0   1       concrete_powder                 Blue Concrete Powder
+   252  12    0   1       concrete_powder                 Brown Concrete Powder
+   252  13    0   1       concrete_powder                 Green Concrete Powder
+   252  14    0   1       concrete_powder                 Red Concrete Powder
    256  0     0   1       iron_shovel                     Iron Shovel
    257  0     0   1       iron_pickaxe                    Iron Pickaxe
    258  0     0   1       iron_axe                        Iron Axe
