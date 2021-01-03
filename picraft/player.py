@@ -271,6 +271,16 @@ class BasePlayer(object):
                     'id %d is not currently tracked' %
                     (self._connection.server_version, pid))
 
+    def get_entities(self, distance=10, type="all"):
+        cmd = 'player.getEntities(%d,%s)' % (distance, type)
+        r = self._connection.transact(
+            cmd
+        )
+        result = [x.split(',') for x in r.split("|") if x]
+        print(r)
+        print(result)
+        return result
+
 
 class Player(BasePlayer):
     """

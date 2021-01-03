@@ -76,7 +76,7 @@ from .player import HostPlayer, Players
 from .block import Blocks
 from .vector import Vector, vector_range
 from .events import Events
-
+from .entity import Entities, Entity
 
 class World(object):
     """
@@ -112,6 +112,7 @@ class World(object):
         self._checkpoint = Checkpoint(self._connection)
         self._camera = Camera(self._connection)
         self._events = Events(self._connection)
+        self._entities = Entities(self._connection)
 
     def __repr__(self):
         return '<World players=%d>' % len(self.players)
@@ -337,6 +338,49 @@ class World(object):
         """
         for line in message.splitlines():
             self.connection.send('chat.post(%s)' % line)
+
+    def get_entities(self, from_vector, to_vector):
+        r = self._connection.transact(
+            'world.getEntitiesInCuboid(%d,%d,%d,%d,%d,%d,)' % (
+                from_vector.x,
+                from_vector.y,
+                from_vector.z,
+                to_vector.x,
+                to_vector.y,
+                to_vector.z
+            )
+        )
+        array_of_entities = []
+        for x in r.split("|"):
+            if not x:
+                continue
+            elements = x.split(",")
+            entity_id = int(elements[0])
+            name = elements[1].upper()
+            location = Vector(
+                int(float(elements[2])),
+                int(float(elements[3])),
+                int(float(elements[4]))
+            )
+            # Set to -1 if we don't recognise the entity
+            entity_type_id = ENTITY_TYPE_ID_LOOKUP.get(name, -1)
+            entity = Entity(
+                entity_type_id,
+                name
+            )
+            entity.make_instance(self._connection, entity_id)
+            array_of_entities.append(
+                {
+                    "id": entity_id,
+                    "entity": entity,
+                    "location": location
+                }
+            )
+        return array_of_entities
+
+    @property
+    def entities(self):
+        return self._entities
 
     def __enter__(self):
         return self
